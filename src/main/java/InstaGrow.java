@@ -39,9 +39,9 @@ public class InstaGrow {
 //    private WebDriver browser;
 //    private WebDriver browser2;
 
-    private int baseDelay = 1; // Рабочий 1, отладка 1
-    private int minWait = 1; // Рабочий 1, отладка 1
-    private int maxWait = 3; // Рабочий 8, отладка 3
+//    private int baseDelay = 1; // Рабочий 1, отладка 1
+//    private int minWait = 1; // Рабочий 1, отладка 1
+//    private int maxWait = 3; // Рабочий 8, отладка 3
     private HashMap<Integer, String> tagBase;
 
     String randTag;
@@ -75,19 +75,19 @@ public class InstaGrow {
     private void login() {
         // log(String.format("Работаем; Логин: %s, Пароль: %s", login, password));
         browser.get("https://www.instagram.com/accounts/login/");
-        waitASecond();
+        Wait.waitASecond();
 
         browser.findElement(new By.ByName("username")).sendKeys(login);
-        waitASecond();
+        Wait.waitASecond();
 
         var pass= browser.findElement(new By.ByName("password"));
 
         pass.sendKeys(password);
         pass.sendKeys(Keys.RETURN);
-        waitASecond();
+        Wait.waitASecond();
 
         browser.findElement(new By.ByXPath(xpaths.get("not_now"))).click();
-        waitASecond();
+        Wait.waitASecond();
 
         browser.findElement(new By.ByXPath(xpaths.get("not_now2"))).click();
         log(String.format("Залогинились, как %s", login));
@@ -126,11 +126,11 @@ public class InstaGrow {
                 search.sendKeys(Keys.ENTER);
                 search.sendKeys(Keys.ENTER);
 
-                waitASecond();
-                waitASecond();
+                Wait.waitASecond();
+                Wait.waitASecond();
 
                 browser.findElement(new By.ByXPath(xpaths.get("first_pic"))).click();
-                waitASecond();
+                Wait.waitASecond();
                 var likeButton1 = browser.findElement(new By.ByXPath(xpaths.get("like_button")));
  //               System.out.println("111"+likeButton1.getTagName());
                                 browser.findElement(new By.ByXPath(xpaths.get("like_button"))).click(); //КЛИКАЕТ ЛАЙК !!!
@@ -173,25 +173,25 @@ public class InstaGrow {
      * Ждём секунду. На самом деле от трёх до пяти, случайным образом.
      */
 
-    public void waitASecond() {
-        try {
+//    public void waitASecond() {
+//        try {
+//
+//            Thread.sleep((baseDelay + ThreadLocalRandom.current().nextInt(minWait, maxWait)) * 1000);
+//            // log("Waiting");
+//        } catch (InterruptedException ex) {
+//            ex.printStackTrace();
+//        }
+//    }
 
-            Thread.sleep((baseDelay + ThreadLocalRandom.current().nextInt(minWait, maxWait)) * 1000);
-            // log("Waiting");
-        } catch (InterruptedException ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    public static void waitForKeys() {
-        try {
-
-            Thread.sleep((ThreadLocalRandom.current().nextInt(5, 8)) * 100);
-            // log("Waiting");
-        } catch (InterruptedException ex) {
-            ex.printStackTrace();
-        }
-    }
+//    public static void waitForKeys() {
+//        try {
+//
+//            Thread.sleep((ThreadLocalRandom.current().nextInt(5, 8)) * 100);
+//            // log("Waiting");
+//        } catch (InterruptedException ex) {
+//            ex.printStackTrace();
+//        }
+//    }
 
     /**
      * Логируем сообщение.

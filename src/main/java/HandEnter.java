@@ -8,7 +8,7 @@ public class HandEnter {
                     char letter = word.charAt(i);
 
                     field.sendKeys(String.valueOf(letter));
-                    InstaGrow.waitForKeys();
+                    Wait.waitForKeys();
                 }
     }
 }

@@ -124,7 +124,7 @@ public class InstaGrow {
 
                 browser.findElement(new By.ByXPath(Xpaths.xpaths.get("first_pic"))).click();
                 Wait.waitASecond();
-                var likeButton1 = browser.findElement(new By.ByXPath(Xpaths.xpaths.get("heart")));
+             //   var likeButton1 = browser.findElement(new By.ByXPath(Xpaths.xpaths.get("heart")));
              //   System.out.println("attribute"+likeButton1.getAttribute("fill"));
 
                 browser.findElement(new By.ByXPath(Xpaths.xpaths.get("like_button"))).click(); //КЛИКАЕТ ЛАЙК !!!
